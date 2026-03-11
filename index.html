@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직장인 타로 - 당신의 커리어를 위한 답</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header>
+            <h1>🎴 직장인 타로</h1>
+            <p class="subtitle">당신의 커리어를 위한 답</p>
+        </header>
 
+        <!-- 메인 화면 -->
+        <div id="mainScreen" class="screen active">
+            <div class="spread-selection">
+                <h2>스프레드 선택</h2>
+                <div class="spread-buttons">
+                    <button class="spread-btn" data-spread="1">
+                        <span class="spread-icon">🎴</span>
+                        <span class="spread-name">원카드</span>
+                        <span class="spread-desc">오늘의 업무운</span>
+                    </button>
+                    <button class="spread-btn" data-spread="3">
+                        <span class="spread-icon">🎴🎴🎴</span>
+                        <span class="spread-name">쓰리카드</span>
+                        <span class="spread-desc">과거-현재-미래</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="all-cards-btn">
+                <button id="viewAllCards">📚 전체 카드 보기</button>
+            </div>
+        </div>
+
+        <!-- 카드 뽑기 화면 -->
+        <div id="drawScreen" class="screen">
+            <h2 id="drawTitle">카드를 뽑으세요</h2>
+            <div id="cardDeck" class="card-deck"></div>
+            <button id="backToMain" class="back-btn">← 돌아가기</button>
+        </div>
+
+        <!-- 결과 화면 -->
+        <div id="resultScreen" class="screen">
+            <div id="resultContent"></div>
+            <div class="result-buttons">
+                <button id="drawAgain" class="action-btn">🔄 다시 뽑기</button>
+                <button id="backFromResult" class="action-btn secondary">← 처음으로</button>
+            </div>
+        </div>
+
+        <!-- 전체 카드 화면 -->
+        <div id="allCardsScreen" class="screen">
+            <h2>전체 카드 (78장)</h2>
+            <div class="card-filter">
+                <button class="filter-btn active" data-type="all">전체</button>
+                <button class="filter-btn" data-type="major">메이저 (22)</button>
+                <button class="filter-btn" data-type="wands">완드 (14)</button>
+                <button class="filter-btn" data-type="cups">컵 (14)</button>
+                <button class="filter-btn" data-type="swords">소드 (14)</button>
+                <button class="filter-btn" data-type="pentacles">펜타클 (14)</button>
+            </div>
+            <div id="allCardsList" class="all-cards-list"></div>
+            <button id="backFromAll" class="back-btn">← 돌아가기</button>
+        </div>
+
+        <!-- 푸터 -->
+        <footer>
+            <p>타로는 미래 예언이 아닌 현재를 비추는 거울입니다</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
